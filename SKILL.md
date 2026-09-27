@@ -48,3 +48,18 @@ Gotchas:
 - `countries` and `top-country` give rounded numbers: use `views_ceil`, not the `views` range string.
 - `top` includes service pages such as `Main_Page` and `Special:Search`; filter them out when analysing interest in articles.
 - Recent data appears with a delay of about one day.
+
+## Plotting
+
+Pick the chart from the data, then hand off rendering by output format:
+- In chat: draw the chart inline, no file.
+- Excel: follow the xlsx skill (native charts).
+- Slides: follow the pptx skill.
+- PDF report: draw PNGs with matplotlib, then follow the pdf skill to lay them out.
+
+Chart conventions:
+- `article`/`views` over time → line chart, x = `timestamp` (YYYYMMDDHH), y = `views`.
+- Comparing articles → one line per article on a shared axis; use log scale if one dwarfs the rest.
+- `top`/`top-country` → horizontal bar, top 10–20, service pages removed.
+- `countries` → bar of `views_ceil`, noting in the caption that values are rounded.
+- Always state project, access, agent and date range in the title or caption.
